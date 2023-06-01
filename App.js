@@ -1,16 +1,14 @@
-import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View, Platform, StatusBar } from 'react-native';
-import { Searchbar } from 'react-native-paper';
+import { ThemeProvider } from 'styled-components/native';
 import { RestaurantsScreen } from './src/features/restaurants/screens/restaurantsScreen';
+import { theme } from './src/infrastructure/theme';
 
 export default function App() {
   return (
     <>
-      <RestaurantsScreen />
+      <ThemeProvider theme={theme}>
+        <RestaurantsScreen />
+      </ThemeProvider>
     </>
   );
 }
 
-const styles = StyleSheet.create({
-
-});
