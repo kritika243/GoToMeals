@@ -1,4 +1,4 @@
-import { Lato_400Regular, useFonts as useLato } from '@expo-google-fonts/lato';
+import { Lato_400Regular, Lato_300Light, useFonts as useLato } from '@expo-google-fonts/lato';
 import { Oswald_400Regular, useFonts as useOswald } from '@expo-google-fonts/oswald';
 import { ThemeProvider } from 'styled-components/native';
 
@@ -12,11 +12,10 @@ export default function App() {
   });
   const [latoLoaded] = useLato({
     Lato_400Regular,
+    Lato_300Light
   });
 
   if (!oswaldLoaded || !latoLoaded) return null
-
-
 
   return (
     <>
