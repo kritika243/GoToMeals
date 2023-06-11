@@ -6,7 +6,8 @@ const RestaurantCard = styled(Card)`
  backgroundColor: ${(props) => props.theme.colors.bg.primary}
 `
 const RestaurantName = styled(Text)`
- color: ${(props) => props.theme.colors.text.primary}
+ color: ${(props) => props.theme.colors.text.primary};
+ font-family: ${(props) => props.theme.fonts.body};
 `
 
 const RestaurantCardCover = styled(Card.Cover)`
