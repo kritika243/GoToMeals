@@ -1,6 +1,6 @@
 import React from "react";
-import { View } from "react-native";
-import { Card, Text } from "react-native-paper";
+import { View, Image } from "react-native";
+import { Card, Text, Button } from "react-native-paper";
 import styled from "styled-components/native";
 
 const RestaurantCard = styled(Card)`
@@ -22,6 +22,17 @@ const RestaurantName = styled(Text)`
  font-size: ${(props) => props.theme.fontSizes.body}
 `
 
+const RatingRow = styled.View`
+  flex-direction: row;
+  padding-top: 5px;
+  padding-bottom: 5px;
+`
+
+const StarImage = styled.Image`
+width: 20px;
+height: 20px
+`
+
 const RestaurantAddress = styled.Text`
  font-family: ${(props) => props.theme.fonts.body};
  font-size: ${(props) => props.theme.fontSizes.caption};
@@ -31,12 +42,21 @@ const RestaurantAddress = styled.Text`
 
 export const RestaurantInfo = ({ restaurant = {} }) => {
   const { name, icon, photos, address, isOpen, rating, isClosedTemporarily } = restaurant
+  const ratingArray = Array.from(new Array(Math.floor(rating)))
   return <>
     <RestaurantCard elevation={5} >
       <RestaurantCardCover source={{ uri: photos[0] }} key={name} />
       <Card.Content>
         <Info>
           <RestaurantName variant="titleLarge" >{name}</RestaurantName>
+          <RatingRow>
+            {
+              ratingArray.map((item, index) => (
+                <StarImage source={require('../../../../assets/star.png')} key={index} />
+              ))
+            }
+          </RatingRow>
+
           <RestaurantAddress>{address}</RestaurantAddress>
         </Info>
       </Card.Content>
