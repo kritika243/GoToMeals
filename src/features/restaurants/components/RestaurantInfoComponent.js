@@ -1,18 +1,19 @@
 import React from "react";
-import { View, Image } from "react-native";
-import { Card, Text, Button } from "react-native-paper";
+import { Image, View } from "react-native";
+import { Button, Card, Text } from "react-native-paper";
 import styled from "styled-components/native";
 
+import { Spacer } from "../../../components/spacer/spacer.component";
+
 const RestaurantCard = styled(Card)`
- backgroundColor: ${(props) => props.theme.colors.bg.primary}
+ backgroundColor: ${(props) => props.theme.colors.bg.primary};
 `
 
 const RestaurantCardCover = styled(Card.Cover)`
   backgroundColor:${(props) => props.theme.colors.bg.primary};
   padding: 20px;
   margin-top: 10px;
-  margin-bottom: 10px
-  
+  margin-bottom: 10px;
 `
 
 const Info = styled.View`
@@ -38,8 +39,17 @@ const RatingRow = styled.View`
 `
 
 const RestaurantStatus = styled.View`
+display:flex;
+flex-direction: row;
+justify-content: space-between
 
 `
+
+const RestaurantTypeIcon = styled.Image`
+  height: 25px;
+  width:25px ;
+`
+
 const StarImage = styled.Image`
 width: 20px;
 height: 20px
@@ -80,9 +90,11 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
               {
                 isOpen ? <StatusImage source={require('../../../../assets/open.png')} /> : <StatusImage source={require('../../../../assets/closed.png')} />
               }
+              <Spacer position={'left'} size={'medium'} >
+                <RestaurantTypeIcon source={require('../../../../assets/tray.png')} />
+              </Spacer>
             </RestaurantStatus>
           </RatingAndStatus>
-
 
           <RestaurantAddress>{address}</RestaurantAddress>
         </Info>
