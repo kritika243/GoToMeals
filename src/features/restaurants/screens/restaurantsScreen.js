@@ -1,11 +1,11 @@
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import React from "react";
-import { Platform, SafeAreaView, StatusBar, Text, View, FlatList } from 'react-native';
+import { FlatList, Platform, SafeAreaView, StatusBar, Text, View } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import styled from "styled-components/native";
 
-import { RestaurantInfo } from "../components/RestaurantInfoComponent";
 import { Spacer } from '../../../components/spacer/spacer.component';
+import { RestaurantInfo } from "../components/RestaurantInfoComponent";
 
 const isAndroid = Platform.OS === 'android'
 
@@ -19,6 +19,12 @@ const SearchContainer = styled(View)`
   padding: 16px;
 `
 
+const RestaurantList = styled(FlatList).attrs({
+  contentContainerStyle: {
+    padding: 16
+  }
+})``
+
 export const RestaurantsScreen = () => {
   return <>
     <MainContainer isAndroid>
@@ -30,7 +36,7 @@ export const RestaurantsScreen = () => {
         />
       </SearchContainer>
 
-      <FlatList
+      <RestaurantList
         data={[{ name: 1 }, { name: 2 }, { name: 3 }, { name: 4 }, { name: 5 }]}
         renderItem={() =>
         (
@@ -45,7 +51,7 @@ export const RestaurantsScreen = () => {
           </>
         )
         }
-        keyExtractor={(item) => item.name} contentContainerStyle={{ padding: 16 }} />
+        keyExtractor={(item) => item.name} />
 
     </MainContainer>
     <ExpoStatusBar style='auto' />
