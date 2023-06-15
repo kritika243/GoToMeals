@@ -4,7 +4,7 @@ import { Text } from 'react-native'
 const SettingsScreen = () => {
   return <>
     <Text>
-      Maps Screen
+      Settings Screen
     </Text>
   </>
 }
