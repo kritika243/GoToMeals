@@ -1,20 +1,16 @@
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import React from "react";
-import { FlatList, Platform, SafeAreaView, StatusBar, Text, View } from 'react-native';
+import { FlatList, Platform, View } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import styled from "styled-components/native";
 
+import { MainContainer } from '../../../components/safearea-component';
 import { Spacer } from '../../../components/spacer/spacer.component';
 import { RestaurantInfo } from "../components/RestaurantInfoComponent";
 
 const isAndroid = Platform.OS === 'android'
 
-const MainContainer = styled(SafeAreaView)`
-  flex: 1;
-  ${props => props.isAndroid && `
-   marginTop: ${StatusBar.currentHeight || 0}px ;
-  `}
-`
+
 const SearchContainer = styled(View)`
   padding: 16px;
 `
