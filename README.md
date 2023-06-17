@@ -8,6 +8,8 @@
 
 ⇨ Overall theme defined and used for the app 
 
+⇨ Navigation using React Navigation - https://reactnavigation.org/
+
 
 
 ![](https://github.com/kritika243/GoToMeals/blob/main/assets/coverForReadMe.jpg)
