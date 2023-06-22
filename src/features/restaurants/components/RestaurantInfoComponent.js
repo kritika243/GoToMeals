@@ -68,7 +68,7 @@ const RestaurantAddress = styled.Text`
 
 
 export const RestaurantInfo = ({ restaurant = {} }) => {
-  const { name, icon, photos, address, isOpen, rating, isClosedTemporarily } = restaurant
+  const { name, icon, photos, address, isOpenNow, rating, isClosedTemporarily } = restaurant
   const ratingArray = Array.from(new Array(Math.floor(rating)))
 
 
@@ -88,10 +88,10 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
             </RatingRow>
             <RestaurantStatus>
               {
-                isOpen ? <StatusImage source={require('../../../../assets/open.png')} /> : <StatusImage source={require('../../../../assets/closed.png')} />
+                isOpenNow ? <StatusImage source={require('../../../../assets/open.png')} /> : <StatusImage source={require('../../../../assets/closed.png')} />
               }
               <Spacer position={'left'} size={'medium'} >
-                <RestaurantTypeIcon source={require('../../../../assets/tray.png')} />
+                <RestaurantTypeIcon source={{ uri: icon }} />
               </Spacer>
             </RestaurantStatus>
           </RatingAndStatus>

@@ -1,13 +1,13 @@
-import { MainContainer } from '../../../components/safearea-component';
-import { Spacer } from '../../../components/spacer/spacer.component';
-import { RestaurantInfo } from "../components/RestaurantInfoComponent";
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
-import React from "react";
+import React, { useContext } from "react";
 import { FlatList, View } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import styled from "styled-components/native";
 
-
+import { MainContainer } from '../../../components/safearea-component';
+import { Spacer } from '../../../components/spacer/spacer.component';
+import { RestaurantsContext } from '../../../services/restaurants/dummy/restaurants.context';
+import { RestaurantInfo } from "../components/RestaurantInfoComponent";
 
 const SearchContainer = styled(View)`
   padding: 16px;
@@ -20,6 +20,8 @@ const RestaurantList = styled(FlatList).attrs({
 })``
 
 export const RestaurantsScreen = () => {
+  const { restaurants, isLoading, error } = useContext(RestaurantsContext)
+
   return <>
     <MainContainer>
       <SearchContainer>
@@ -31,15 +33,12 @@ export const RestaurantsScreen = () => {
       </SearchContainer>
 
       <RestaurantList
-        data={[{ name: 1 }, { name: 2 }, { name: 3 }, { name: 4 }, { name: 5 }]}
-        renderItem={() =>
+        data={restaurants}
+        renderItem={({ item }) =>
         (
           <>
             <Spacer position='bottom' size='large'>
-              <RestaurantInfo restaurant={{
-                name: "Restaurant 1", icon: '', photos: ['https://images.unsplash.com/photo-1515669097368-22e68427d265?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80'], address: 'random address', isOpen: true, rating: 4, isClosedTemporarily: false,
-                icon: require('../../../../assets/tray.png')
-              }}
+              <RestaurantInfo restaurant={item}
               />
             </Spacer>
           </>
