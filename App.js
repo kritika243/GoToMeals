@@ -9,6 +9,7 @@ import MapsScreen from './src/features/restaurants/screens/mapsScreen';
 import { RestaurantsScreen } from './src/features/restaurants/screens/restaurantsScreen';
 import SettingsScreen from './src/features/restaurants/screens/settingsScreen';
 import { theme } from './src/infrastructure/theme';
+import { restaurantsRequest } from "./src/services/restaurants/dummy/restaurants.context"
 
 const Tab = createBottomTabNavigator();
 
@@ -44,6 +45,8 @@ export default function App() {
       tabBarInactiveTintColor: 'gray',
     }
   }
+
+
 
   return (
     <>
