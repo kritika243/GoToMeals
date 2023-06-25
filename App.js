@@ -9,6 +9,7 @@ import MapsScreen from './src/features/restaurants/screens/mapsScreen';
 import { RestaurantsScreen } from './src/features/restaurants/screens/restaurantsScreen';
 import SettingsScreen from './src/features/restaurants/screens/settingsScreen';
 import { theme } from './src/infrastructure/theme';
+import { LocationContextProvider } from './src/services/location/location.context';
 import { RestaurantsContextProvider } from './src/services/restaurants/dummy/restaurants.context'
 
 const Tab = createBottomTabNavigator();
@@ -51,17 +52,19 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RestaurantsContextProvider>
-          <NavigationContainer>
-            <Tab.Navigator
-              screenOptions={getScreenOptions}
-            >
-              <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
-              <Tab.Screen name="Maps" component={MapsScreen} />
-              <Tab.Screen name="Settings" component={SettingsScreen} />
-            </Tab.Navigator>
-          </NavigationContainer>
-        </RestaurantsContextProvider>
+        <LocationContextProvider>
+          <RestaurantsContextProvider>
+            <NavigationContainer>
+              <Tab.Navigator
+                screenOptions={getScreenOptions}
+              >
+                <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+                <Tab.Screen name="Maps" component={MapsScreen} />
+                <Tab.Screen name="Settings" component={SettingsScreen} />
+              </Tab.Navigator>
+            </NavigationContainer>
+          </RestaurantsContextProvider>
+        </LocationContextProvider>
       </ThemeProvider >
     </>
   );
