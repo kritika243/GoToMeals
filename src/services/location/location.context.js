@@ -6,13 +6,17 @@ export const LocationContext = createContext()
 
 export const LocationContextProvider = ({ children }) => {
   const [location, setLocation] = useState(null)
-  const [keyword, setKeyword] = useState('san francisco')
+  const [keyword, setKeyword] = useState('San Francisco')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
   const onSearch = (searchKeyword) => {
     setKeyword(searchKeyword)
     setLoading(true)
+
+    if (!searchKeyword.length) {
+      return
+    }
     locationRequest(searchKeyword.toLowerCase()).then(locationTransform).then((result) => {
       setLoading(false)
       setLocation(result)

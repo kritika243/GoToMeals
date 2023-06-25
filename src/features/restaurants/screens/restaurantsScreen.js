@@ -1,7 +1,6 @@
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import React, { useContext } from "react";
 import { FlatList, View } from 'react-native';
-import { Searchbar } from 'react-native-paper';
 import { ActivityIndicator, MD2Colors } from 'react-native-paper';
 import styled from "styled-components/native";
 
@@ -9,10 +8,9 @@ import { MainContainer } from '../../../components/safearea-component';
 import { Spacer } from '../../../components/spacer/spacer.component';
 import { RestaurantsContext } from '../../../services/restaurants/dummy/restaurants.context';
 import { RestaurantInfo } from "../components/RestaurantInfoComponent";
+import { Search } from '../components/SearchComponent';
 
-const SearchContainer = styled(View)`
-  padding: 16px;
-`
+
 
 const LoaderContainer = styled(View)`
   display: flex;
@@ -38,14 +36,7 @@ export const RestaurantsScreen = () => {
             <ActivityIndicator animating={true} color={MD2Colors.red800} size={'large'} />
           </LoaderContainer>
         </> : <>
-          <SearchContainer>
-            <Searchbar
-              placeholder="Search"
-              onChangeText={() => { }}
-              value={''}
-            />
-          </SearchContainer>
-
+          <Search />
           <RestaurantList
             data={restaurants}
             renderItem={({ item }) =>
