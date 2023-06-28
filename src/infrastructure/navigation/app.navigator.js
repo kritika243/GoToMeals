@@ -3,8 +3,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
 import MapsScreen from '../../features/restaurants/screens/mapsScreen';
-import { RestaurantsScreen } from '../../features/restaurants/screens/restaurantsScreen';
 import SettingsScreen from '../../features/restaurants/screens/settingsScreen';
+import { RestaurantsNavigator } from './restaurants.navigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -36,7 +36,7 @@ export const AppNavigator = () => {
         <Tab.Navigator
           screenOptions={getScreenOptions}
         >
-          <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+          <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
           <Tab.Screen name="Maps" component={MapsScreen} />
           <Tab.Screen name="Settings" component={SettingsScreen} />
         </Tab.Navigator>
