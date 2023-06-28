@@ -68,7 +68,7 @@ const RestaurantAddress = styled.Text`
 
 
 export const RestaurantInfo = ({ restaurant = {} }) => {
-  const { name, icon, photos, address, isOpenNow, rating, isClosedTemporarily } = restaurant
+  const { name, icon, photos, vicinity: address, isOpenNow, rating, isClosedTemporarily } = restaurant
   const ratingArray = Array.from(new Array(Math.floor(rating)))
 
 
