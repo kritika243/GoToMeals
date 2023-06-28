@@ -14,9 +14,6 @@ export const Search = () => {
   const [searchedKeyword, setSearchedKeyword] = useState(keyword)
 
 
-  useEffect(() => {
-    search(searchedKeyword)
-  }, [])
 
 
   return <>
