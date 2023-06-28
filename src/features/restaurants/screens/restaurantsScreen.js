@@ -10,8 +10,6 @@ import { RestaurantsContext } from '../../../services/restaurants/dummy/restaura
 import { RestaurantInfo } from "../components/RestaurantInfoComponent";
 import { Search } from '../components/SearchComponent';
 
-
-
 const LoaderContainer = styled(View)`
   display: flex;
   /* justify-content: center;
