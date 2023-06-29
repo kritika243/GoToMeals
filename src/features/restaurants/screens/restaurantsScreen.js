@@ -1,6 +1,6 @@
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import React, { useContext } from "react";
-import { FlatList, View } from 'react-native';
+import { FlatList, Pressable, View } from 'react-native';
 import { ActivityIndicator, MD2Colors } from 'react-native-paper';
 import styled from "styled-components/native";
 
@@ -23,7 +23,7 @@ const RestaurantList = styled(FlatList).attrs({
   }
 })``
 
-export const RestaurantsScreen = () => {
+export const RestaurantsScreen = ({ navigation }) => {
   const { restaurants, isLoading, error } = useContext(RestaurantsContext)
 
   return <>
@@ -40,10 +40,13 @@ export const RestaurantsScreen = () => {
             renderItem={({ item }) =>
             (
               <>
-                <Spacer position='bottom' size='large'>
-                  <RestaurantInfo restaurant={item}
-                  />
-                </Spacer>
+                <Pressable onPress={() => navigation.navigate('RestaurantDetails')} >
+                  <Spacer position='bottom' size='large'>
+                    <RestaurantInfo restaurant={item}
+                    />
+                  </Spacer>
+                </Pressable>
+
               </>
             )
             }
