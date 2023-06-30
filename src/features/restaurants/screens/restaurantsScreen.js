@@ -1,6 +1,6 @@
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import React, { useContext } from "react";
-import { FlatList, Pressable, View } from 'react-native';
+import { FlatList, Pressable, TouchableOpacity, View } from 'react-native';
 import { ActivityIndicator, MD2Colors } from 'react-native-paper';
 import styled from "styled-components/native";
 
@@ -40,12 +40,12 @@ export const RestaurantsScreen = ({ navigation }) => {
             renderItem={({ item }) =>
             (
               <>
-                <Pressable onPress={() => navigation.navigate('RestaurantDetails')} >
+                <TouchableOpacity onPress={() => navigation.navigate('RestaurantDetails')} >
                   <Spacer position='bottom' size='large'>
                     <RestaurantInfo restaurant={item}
                     />
                   </Spacer>
-                </Pressable>
+                </TouchableOpacity>
 
               </>
             )
