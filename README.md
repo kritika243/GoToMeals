@@ -2,15 +2,17 @@
 ## Till now 
 ⇨ SafeAreaView for both Android and IOS
 
-⇨ Basic SearchBar component UI
+⇨ SearchBar with search capabilities
 
-⇨ Restaurant info card UI 
+⇨ Restaurant info card  
 
-⇨ Overall theme defined and used for the app 
+⇨ Overall theme defined and used throughout the app 
 
 ⇨ Navigation using React Navigation - https://reactnavigation.org/
 
-- Geo-Location service to search for restaurants for a location
+⇨ Restaurants details page with menu for each restaurant
+
+⇨ Geo-Location service to search for restaurants for a location
 
 
 
