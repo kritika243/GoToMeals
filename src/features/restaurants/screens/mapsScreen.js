@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
-import MapView, { Marker } from 'react-native-maps';
+import { View } from "react-native";
+import MapView, { Callout, Marker } from 'react-native-maps';
+import { Text } from "react-native-paper";
 import styled from "styled-components/native";
 
 import { LocationContext } from "../../../services/location/location.context";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
-import { Search } from "../components/MapScreenSearchComponent";
+import { Search } from "../../map/components/MapScreenSearchComponent";
+import MapCalloutComponent from "../../map/components/MapCalloutComponent";
 
 const Map = styled(MapView)`
 height: 100%;
@@ -45,7 +48,11 @@ const MapsScreen = () => {
               latitude: restaurant.geometry.location.lat,
               longitude: restaurant.geometry.location.lng,
             }}
-          />
+          >
+            <Callout>
+              <MapCalloutComponent restaurant={restaurant} />
+            </Callout>
+          </Marker>
         );
       })}
     </Map>
