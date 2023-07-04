@@ -1,16 +1,18 @@
 import React from "react";
-import { Text } from 'react-native'
 import MapView from 'react-native-maps';
+import styled from "styled-components/native";
 
-import { MainContainer } from "../../../components/safearea-component";
+import { Search } from "../components/MapScreenSearchComponent";
+
+const Map = styled(MapView)`
+height: 100%;
+width: 100%
+`
 
 const MapsScreen = () => {
   return <>
-    <MainContainer>
-
-      <MapView style={{ height: "100%" }} />
-
-    </MainContainer>
+    <Search />
+    <Map />
   </>
 }
 
