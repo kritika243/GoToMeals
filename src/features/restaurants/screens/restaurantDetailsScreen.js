@@ -17,7 +17,7 @@ export const RestaurantDetailsScreen = ({ route }) => {
     <MainContainer>
       <RestaurantInfo restaurant={restaurant} />
       <ScrollView>
-        <List.Section title="Accordions">
+        <List.Section title="Menu">
 
           <List.Accordion
             title="Breakfast"
