@@ -1,18 +1,22 @@
 
 ## Till now 
-⇨ SafeAreaView for both Android and IOS
+⇨ 📱 SafeAreaView for both Android and IOS
 
-⇨ SearchBar with search capabilities
+⇨ 🔍 SearchBar with search capabilities
 
-⇨ Restaurant info card  
+⇨ 👨‍🍳 Restaurant info card with menu listed
 
-⇨ Overall theme defined and used throughout the app 
+⇨ 🎨 Overall theme defined and used throughout the app 
 
-⇨ Navigation using React Navigation - https://reactnavigation.org/
+⇨ ✨ Navigation using React Navigation - https://reactnavigation.org/
 
-⇨ Restaurants details page with menu for each restaurant
+⇨ 🍱 Restaurants details page with menu for each restaurant
 
-⇨ Geo-Location service to search for restaurants for a location
+⇨ 📍 Geo-Location service to search for restaurants for a location
+
+<br/>
+
+<br/>
 
 
 <img src="https://github.com/kritika243/GoToMeals/blob/main/assets/readme/1.jpg" alt="drawing" width="800" height="400" />
