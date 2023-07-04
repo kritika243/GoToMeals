@@ -6,7 +6,7 @@ import styled from "styled-components/native";
 
 import { MainContainer } from '../../../components/safearea-component';
 import { Spacer } from '../../../components/spacer/spacer.component';
-import { RestaurantsContext } from '../../../services/restaurants/dummy/restaurants.context';
+import { RestaurantsContext } from '../../../services/restaurants/restaurants.context';
 import { RestaurantInfo } from "../components/RestaurantInfoComponent";
 import { Search } from '../components/SearchComponent';
 

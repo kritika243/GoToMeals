@@ -33,7 +33,6 @@ export const Search = () => {
         }}
         value={searchedKeyword}
         onChangeText={(text) => {
-
           setSearchedKeyword(text)
         }}
       />
