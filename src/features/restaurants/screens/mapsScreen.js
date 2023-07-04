@@ -1,14 +1,15 @@
 import React from "react";
 import { Text } from 'react-native'
+import MapView from 'react-native-maps';
 
 import { MainContainer } from "../../../components/safearea-component";
 
 const MapsScreen = () => {
   return <>
-  <MainContainer>
-    <Text>
-      Maps Screen
-    </Text>
+    <MainContainer>
+
+      <MapView style={{ height: "100%" }} />
+
     </MainContainer>
   </>
 }
