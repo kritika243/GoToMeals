@@ -1,16 +1,14 @@
 import React from 'react'
-import { Text } from 'react-native'
-import styled from 'styled-components/native'
 
-const CalloutText = styled(Text)`
+import CompactRestaurantCard from '../../restaurants/components/CompactRestaurantCard';
 
-`
 const MapCalloutComponent = ({ restaurant }) => {
+
   return (
     <>
-      <CalloutText>
-        {restaurant.name}
-      </CalloutText>
+
+      <CompactRestaurantCard restaurant={restaurant} />
+
     </>
   )
 }
