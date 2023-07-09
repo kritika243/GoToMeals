@@ -1,16 +1,15 @@
-import { AntDesign } from '@expo/vector-icons'
+import { AntDesign } from '@expo/vector-icons';
 import React, { useContext } from 'react'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native'
 
 import { FavoritesContext } from '../../services/favorites/favorites.context'
 
 const FavoriteButton = styled(TouchableOpacity)`
-background-color: transparent
-position: absolute;
-top: 10px
-right: 10px
-z-index: 9
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 9;
 `
 
 export const FavoriteIcon = () => {
@@ -18,7 +17,7 @@ export const FavoriteIcon = () => {
   return (
     <>
       <FavoriteButton>
-        <AntDesign name='heart' size={24} color={'red'} />
+        <AntDesign name="heart" size={24} color="red" />
       </FavoriteButton>
     </>
   )
