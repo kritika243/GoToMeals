@@ -4,6 +4,7 @@ import { Button, Card, Text } from "react-native-paper";
 import styled from "styled-components/native";
 
 import { Spacer } from "../../../components/spacer/spacer.component";
+import { FavoriteIcon } from "../../../components/favorite/FavoriteIcon";
 
 const RestaurantCard = styled(Card)`
  backgroundColor: ${(props) => props.theme.colors.bg.primary};
@@ -74,6 +75,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
 
   return <>
     <RestaurantCard elevation={5} >
+      <FavoriteIcon />
       <RestaurantCardCover source={{ uri: photos[0] }} key={name} />
       <Card.Content>
         <Info>

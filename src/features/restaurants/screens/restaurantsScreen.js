@@ -6,6 +6,7 @@ import styled from "styled-components/native";
 
 import { MainContainer } from '../../../components/safearea-component';
 import { Spacer } from '../../../components/spacer/spacer.component';
+import { FavoritesContext } from '../../../services/favorites/favorites.context';
 import { RestaurantsContext } from '../../../services/restaurants/restaurants.context';
 import { RestaurantInfo } from "../components/RestaurantInfoComponent";
 import { Search } from '../components/SearchComponent';
@@ -25,6 +26,7 @@ const RestaurantList = styled(FlatList).attrs({
 
 export const RestaurantsScreen = ({ navigation }) => {
   const { restaurants, isLoading, error } = useContext(RestaurantsContext)
+  const { favorites } = useContext(FavoritesContext)
 
   return <>
     <MainContainer>
