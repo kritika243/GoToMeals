@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components/native';
 
 import { Navigation } from './src/infrastructure/navigation';
 import { theme } from './src/infrastructure/theme';
+import { FavoritesContext } from './src/services/favorites/favorites.context';
 import { LocationContextProvider } from './src/services/location/location.context';
 import { RestaurantsContextProvider } from './src/services/restaurants/restaurants.context';
 
@@ -28,11 +29,13 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
+        <FavoritesContext>
         <LocationContextProvider>
           <RestaurantsContextProvider>
             <Navigation />
           </RestaurantsContextProvider>
         </LocationContextProvider>
+        </FavoritesContext>
       </ThemeProvider >
     </>
   );
