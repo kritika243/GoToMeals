@@ -1,5 +1,5 @@
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FlatList, Pressable, TouchableOpacity, View } from 'react-native';
 import { ActivityIndicator, MD2Colors } from 'react-native-paper';
 import styled from "styled-components/native";
@@ -27,7 +27,7 @@ const RestaurantList = styled(FlatList).attrs({
 export const RestaurantsScreen = ({ navigation }) => {
   const { restaurants, isLoading, error } = useContext(RestaurantsContext)
   const { favorites } = useContext(FavoritesContext)
-
+  const [isToggled, setIsToggled] = useState(false)
   return <>
     <MainContainer>
       {
@@ -36,7 +36,7 @@ export const RestaurantsScreen = ({ navigation }) => {
             <ActivityIndicator animating={true} color={MD2Colors.red800} size={'large'} />
           </LoaderContainer>
         </> : <>
-          <Search />
+          <Search isFavoritesToggled={isToggled} onFavoritesToggle={() => setIsToggled(!isToggled)} />
           <RestaurantList
             data={restaurants}
             renderItem={({ item }) =>
