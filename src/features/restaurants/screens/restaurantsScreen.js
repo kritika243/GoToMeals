@@ -1,15 +1,15 @@
-import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
-import React, { useContext, useState } from "react";
-import { FlatList, Pressable, TouchableOpacity, View } from 'react-native';
-import { ActivityIndicator, MD2Colors } from 'react-native-paper';
-import styled from "styled-components/native";
-
+import FavoriteBar from '../../../components/favorite/FavoriteBar';
 import { MainContainer } from '../../../components/safearea-component';
 import { Spacer } from '../../../components/spacer/spacer.component';
 import { FavoritesContext } from '../../../services/favorites/favorites.context';
 import { RestaurantsContext } from '../../../services/restaurants/restaurants.context';
 import { RestaurantInfo } from "../components/RestaurantInfoComponent";
 import { Search } from '../components/SearchComponent';
+import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
+import React, { useContext, useState } from "react";
+import { FlatList, Pressable, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, MD2Colors } from 'react-native-paper';
+import styled from "styled-components/native";
 
 const LoaderContainer = styled(View)`
   display: flex;
@@ -37,6 +37,9 @@ export const RestaurantsScreen = ({ navigation }) => {
           </LoaderContainer>
         </> : <>
           <Search isFavoritesToggled={isToggled} onFavoritesToggle={() => setIsToggled(!isToggled)} />
+          {
+            isToggled && <FavoriteBar favorites={favorites} goToDetailsScreen={navigation.navigate} />
+          }
           <RestaurantList
             data={restaurants}
             renderItem={({ item }) =>
