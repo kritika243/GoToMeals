@@ -27,8 +27,8 @@ margin-bottom: 10px
 `
 
 const isAndroid = Platform.OS === 'android'
-const CompactRestaurantCard = ({ restaurant }) => {
-  const Image = isAndroid ? CompactWebView : CompactImage
+const CompactRestaurantCard = ({ restaurant, isMapScreen }) => {
+  const Image = isAndroid && isMapScreen ? CompactWebView : CompactImage
   return (
     <>
       <CompactItem>

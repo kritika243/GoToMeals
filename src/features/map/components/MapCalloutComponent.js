@@ -7,7 +7,7 @@ const MapCalloutComponent = ({ restaurant }) => {
   return (
     <>
 
-      <CompactRestaurantCard restaurant={restaurant} />
+      <CompactRestaurantCard restaurant={restaurant} isMapScreen />
 
     </>
   )
