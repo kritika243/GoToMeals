@@ -1,8 +1,9 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
-import { Text, View } from 'react-native'
+
 
 import { AccountScreen } from '../../features/account/screens/account.screen'
+import { LoginScreen } from '../../features/account/screens/login.screen'
 
 const Stack = createStackNavigator()
 const AccountNavigator = () => {
@@ -14,7 +15,7 @@ const AccountNavigator = () => {
 
       <Stack.Screen name='Main' component={AccountScreen} />
 
-      <Stack.Screen name='Login' component={AccountScreen} />
+      <Stack.Screen name='Login' component={LoginScreen} />
 
       <Stack.Screen name='Register' component={AccountScreen} />
 
